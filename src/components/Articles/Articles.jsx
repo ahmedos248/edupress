@@ -36,14 +36,14 @@ export default function Articles() {
                             <img src={course.image} alt={course.title} className="object-cover w-full h-full" />
                         </div>
                         <div className="p-4 flex-1 space-y-4">
-                            <h4 className="w-80 h-14 text-lg font-semibold text-gray-800 mb-3 left-0 top-0 opacity-100 group-hover:text-orange-500 transition duration-300">
+                            <h4 className="w-80 h-14 mdtext-lg text-base font-semibold text-gray-800 mb-3 left-0 top-0 opacity-100 group-hover:text-orange-500 transition duration-300">
                                 Best LearnPress WordPress Theme Collection for 2023
                             </h4>
-                            <span className="flex items-center space-x-2 text-sm text-gray-600">
+                            <span className="flex items-center space-x-2 md:text-sm text-xs text-gray-600">
                                 <i className="fa-regular fa-calendar text-orange-500"></i>
                                 <span>{currentDate}</span>
                             </span>
-                            <p className="text-gray-600">Looking for an amazing & well-functional LearnPress WordPress Theme?...</p>
+                            <p className="text-gray-600 md:text-base text-xs">Looking for an amazing & well-functional LearnPress WordPress Theme?...</p>
                         </div>
                     </div>
                 ))}

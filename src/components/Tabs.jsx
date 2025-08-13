@@ -83,13 +83,13 @@ export default function Tabs() {
     const [activeIndex, setActiveIndex] = useState(0); // Curriculum active by default
 
     return (
-        <div className="max-w-[850px] md:mt-6 lg:mt-0 border rounded-3xl overflow-hidden">
-            <div className="flex border-b border-gray-200">
+        <div className="max-w-[850px] md:mt-6 lg:mt-0 border rounded-3xl overflow-hidden md:m-4 m-1">
+            <div className="grid grid-cols-5 border-b border-gray-200">
                 {tabs.map((tab, index) => (
                     <button
                         key={tab.label}
                         onClick={() => setActiveIndex(index)}
-                        className={`px-4 py-2 font-semibold exo-text w-[170px] h-[64px] md:text-base text-sm focus:outline-none ${activeIndex === index
+                        className={`md:px-4 px-3 py-2 font-semibold exo-text h-[64px] md:text-base text-[10px] focus:outline-none ${activeIndex === index
                             ? "text-orange-500 bg-gray-100"
                             : "text-gray-700 hover:text-orange-500"
                             }`}

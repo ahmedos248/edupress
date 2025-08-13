@@ -1,7 +1,7 @@
 
 const Sidebar = ({ className = '' }) => {
     return (
-        <aside className={`space-y-8 ${className}`}>
+        <aside className={`space-y-8 overflow-scroll custom-scroll bg-white/40 ${className}`}>
             <div>
                 <h2 className="font-bold text-lg mb-4">Category</h2>
                 <ul className="space-y-2 text-gray-600">

@@ -6,11 +6,11 @@ const Hero = () => {
             <img src="./images/hero.jpg" alt="" className='object-cover absolute top-0 left-0 h-full' />
             <div className="grid lg:grid-cols-2 gap-10 items-center">
                 <div className="space-y-6 z-10 ">
-                    <h1 className="text-4xl lg:w-96 w-72 lg:text-5xl font-extrabold leading-tight text-gray-900 exo-text">
+                    <h1 className="md:text-4xl text-3xl lg:w-96 w-72 lg:text-5xl font-extrabold leading-tight text-gray-900 exo-text">
                         Build Skills with
                         Online Course
                     </h1>
-                    <p className="text-gray-600 text-lg md:w-[530px] w-[400px]">
+                    <p className="text-gray-600 md:text-lg text-sm md:max-w-[530px] max-w-[250px]">
                         We denounce with righteous indignation and dislike men who are so beguiled and demoralized that cannot trouble.
                     </p>
                     <div className="space-x-4">

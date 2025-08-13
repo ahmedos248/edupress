@@ -13,11 +13,11 @@ const StudentFeedbacks = () => {
                         <div>
                             <img src="/images/“.svg" alt="xb" />
                         </div>
-                        <p>
+                        <p className='md:text-base text-xs'>
                             I must explain to you how all this mistaken . Tdea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound
                         </p>
-                        <h4 className="font-semibold text-xl">Roe Smith</h4>
-                        <p className="text-gray-500">Designer</p>
+                        <h4 className="font-semibold md:text-xl text-lg">Roe Smith</h4>
+                        <p className="text-gray-500 md:text-base text-xs">Designer</p>
                     </div>
                 ))}
             </div>
@@ -26,13 +26,13 @@ const StudentFeedbacks = () => {
                     <div className='bg-white rounded-full p-4 px-5'>
                         <img src="/images/Group.svg" alt="" />
                     </div>
-                    <h4 className='text-xl font-semibold'>Let’s Start With Academy LMS</h4>
+                    <h4 className='md:text-xl text-base font-semibold'>Let’s Start With Academy LMS</h4>
                 </div>
                 <div className='flex items-center justify-between space-x-4'>
-                    <button className="text-orange-500 border-2 border-orange-500 rounded-full px-6 py-3 ">
+                    <button className="text-orange-500 border-2 border-orange-500 rounded-full md:px-6 md:py-3 px-4 py-2 md:text-base text-xs">
                         I’m a student
                     </button>
-                    <button className="text-white rounded-full bg-orange-500 px-6 py-3 ">
+                    <button className="text-white rounded-full bg-orange-500 md:px-6 md:py-3 px-4 py-2 md:text-base text-xs">
                         Become an Instructor
                     </button>
                 </div>

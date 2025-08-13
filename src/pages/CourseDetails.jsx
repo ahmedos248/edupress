@@ -13,15 +13,15 @@ export default function CourseDetails() {
         <>
             <Breadcrumb />
             <div className="w-full bg-black">
-                <div className="max-w-screen-xl relative mx-auto px-6 py-12 bg-black h-[290px] flex justify-between exo-text overflow-hidden md:overflow-visible">
-                    <img src={course.image} alt="" className="w-full object-cover opacity-30 absolute top-0 left-0 md:hidden" />
+                <div className="max-w-screen-xl relative mx-auto px-6 py-12 bg-black md:h-[290px] h-[320px] flex justify-between exo-text overflow-hidden md:overflow-visible">
+                    <img src={course.image} alt="" className="h-full object-cover opacity-30 absolute top-0 left-0 md:hidden" />
                     <div className="text-white space-y-6 z-10">
                         <div className="flex flex-row items-center space-x-4">
                             <button className="bg-[#555555] p-4 py-3 rounded-xl">Photography</button>
                             <p><span className="text-gray-400">by </span>Determined-Poitras</p>
                         </div>
                         <h1 className="lg:text-4xl md:text-2xl text-xl">The Ultimate Guide to the best WordPress LMS Plugin</h1>
-                        <div className=" items-center flex flex-row flex-wrap justify-start space-x-5 space-y-0 md:text-sm text-[11px] text-gray-500 md:mb-14">
+                        <div className=" items-center flex flex-row flex-wrap justify-start space-x-5 space-y-0 md:text-sm text-[11px] md:text-gray-500 text-gray-300 md:mb-14">
                             <span className="flex items-center space-x-1">
                                 <i className="fa-regular fa-clock text-orange-500"></i>
                                 <span>2 Weeks</span>

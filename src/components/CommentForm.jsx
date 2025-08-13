@@ -2,7 +2,7 @@ import React from "react";
 
 const CommentForm = ({ className = '' }) => {
     return (
-        <div className={`mt-8 ${className}`}>
+        <div className={`mt-8 md:mx-4 ${className}`}>
             <h3 className="font-semibold text-lg">Leave A Comment</h3>
             <p className="text-sm text-gray-600 mb-4">
                 Your email address will not be published. Required fields are marked *
