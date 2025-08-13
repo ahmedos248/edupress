@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ArticleCard1 from './ArticleCard1';
 import ArticleCard2 from './ArticleCard2';
-import Sidebar from '../SideBar';
+import Sidebar from '../Sidebar';
 import Articles from '../../data/articles.json';
 
 const AllArticles = () => {
