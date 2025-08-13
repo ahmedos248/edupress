@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Breadcrumb from '../components/Breadcrumb'
 import { useLocation } from "react-router-dom";
-import Sidebar from '../components/SideBar';
+import Sidebar from '../components/Sidebar';
 import CommentForm from '../components/CommentForm';
 
 
