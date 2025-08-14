@@ -1,0 +1,38 @@
+[
+    {
+        "image": "/images/Image1.jpg",
+        "price": "$29.0",
+        "disc": "Free",
+        "id": 1
+    },
+    {
+        "image": "/images/Image2.jpg",
+        "price": "$59.0",
+        "disc1": "$49.0",
+        "id": 2
+    },
+    {
+        "image": "/images/Image3.jpg",
+        "price": "$29.0",
+        "disc": "Free",
+        "id": 3
+    },
+    {
+        "image": "/images/Image4.jpg",
+        "price": "$29.0",
+        "disc": "Free",
+        "id": 4
+    },
+    {
+        "image": "/images/Image5.jpg",
+        "price": "$29.0",
+        "disc": "Free",
+        "id": 5
+    },
+    {
+        "image": "/images/Image6.jpg",
+        "price": "$29.0",
+        "disc": "Free",
+        "id": 6
+    }
+]

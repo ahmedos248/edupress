@@ -1,15 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const LearnPress = () => {
     return (
         <section className='max-w-screen-xl mx-auto px-6 py-12 bg-white exo-text'>
-            <div className='w-full p-14 pb-16 rounded-2xl bg-[url("/images/learnpress.jpg")] bg-cover bg-center space-y-4 '>
+            <div id="learnpress" className='w-full p-14 pb-16 rounded-2xl bg-[url("/images/learnpress.jpg")] bg-cover bg-center space-y-4 scroll-mt-24'>
                 <h5 className='text-gray-600 font-semibold md:text-base text-xs'>GET MORE POWER FROM</h5>
                 <h2 className='font-semibold md:text-3xl text-xl'>LearnPress Add-Ons</h2>
                 <p className='lg:text-gray-600 md:max-w-[450px] md:text-base text-xs'>The next level of LearnPress - LMS WordPress Plugin. More Powerful, Flexible and Magical Inside.</p>
-                <button className="text-white rounded-full bg-orange-500 md:px-6 md:py-3 px-4 py-2 md:text-base text-xs">
+                <Link to="/courses" type='button' className="text-white rounded-full bg-orange-500 md:px-6 md:py-3 px-4 py-2 md:text-base text-xs">
                     Explorer course
-                </button>
+                </Link>
             </div>
             <div className='flex flex-wrap lg:flex-row lg:justify-between justify-center gap-4 mt-24'>
                 <div className='bg-gray-100 text-center p-14 w-72 rounded-2xl font-semibold space-y-4'>
@@ -43,18 +44,18 @@ const LearnPress = () => {
                         <li><i className="fa-solid fa-check text-green-500"></i> Certification</li>
                         <li><i className="fa-solid fa-check text-green-500"></i> Certification</li>
                     </ul>
-                    <button className="text-white rounded-full bg-orange-500 md:px-6 md:py-3 px-4 py-2 md:text-base text-sm">
+                    <Link to="/courses" type='button' className="text-white rounded-full bg-orange-500 md:px-6 md:py-3 px-4 py-2 md:text-base text-sm">
                         Explorer course
-                    </button>
+                    </Link>
                 </div>
             </div>
-            <div className='w-full flex flex-col items-center p-14 pb-16 rounded-2xl bg-[url("/images/banner1.jpg")] bg-cover bg-center space-y-4 '>
+            <div id="theme" className='w-full flex flex-col items-center p-14 pb-16 rounded-2xl bg-[url("/images/banner1.jpg")] bg-cover bg-center space-y-4 scroll-mt-96'>
                 <h5 className='font-semibold md:text-base text-sm'>PROVIDING AMAZING</h5>
                 <h2 className='font-semibold md:text-3xl text-xl text-center'>Education wordpress theme</h2>
                 <p className='text-gray-600 text-center md:text-base text-sm'>The next level of LMS WordPress Theme. Learn anytime and anywhere.</p>
-                <button className="text-white rounded-full bg-orange-500 md:px-6 md:py-3 px-4 py-2 md:text-base text-sm">
+                <Link to="/courses" type='button' className="text-white rounded-full bg-orange-500 md:px-6 md:py-3 px-4 py-2 md:text-base text-xs">
                     Explorer course
-                </button>
+                </Link>
             </div>
         </section>
     )

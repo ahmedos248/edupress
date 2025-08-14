@@ -21,18 +21,18 @@ const StudentFeedbacks = () => {
                     </div>
                 ))}
             </div>
-            <div className='w-full flex lg:justify-between flex-wrap justify-center lg:space-y-0 space-y-10 p-10 py-16 rounded-2xl bg-[url("/images/banner2.jpg")] bg-cover my-24'>
-                <div className='flex items-center justify-between space-x-4'>
+            <div className='w-full flex md:justify-between flex-wrap justify-center md:space-y-0 space-y-10 p-10 py-16 rounded-2xl bg-[url("/images/banner2.jpg")] bg-cover my-24'>
+                <div className='flex items-center justify-between space-x-4 mb-4'>
                     <div className='bg-white rounded-full p-4 px-5'>
                         <img src="/images/Group.svg" alt="" />
                     </div>
                     <h4 className='md:text-xl text-base font-semibold'>Let’s Start With Academy LMS</h4>
                 </div>
                 <div className='flex items-center justify-between space-x-4'>
-                    <button className="text-orange-500 border-2 border-orange-500 rounded-full md:px-6 md:py-3 px-4 py-2 md:text-base text-xs">
+                    <button className="text-orange-500 border-2 border-orange-500 rounded-full md:px-6 md:py-3 px-4 py-2 lg:text-base md:text-sm text-xs">
                         I’m a student
                     </button>
-                    <button className="text-white rounded-full bg-orange-500 md:px-6 md:py-3 px-4 py-2 md:text-base text-xs">
+                    <button className="text-white rounded-full bg-orange-500 md:px-6 md:py-3 px-4 py-2 lg:text-base md:text-sm text-xs">
                         Become an Instructor
                     </button>
                 </div>

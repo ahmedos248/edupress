@@ -1,23 +1,59 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const location = useLocation();
     return (
         <>
             <nav className="bg-white shadow w-full fixed top-0 z-50 exo-text text-[16px] font-semibold lg:block hidden">
-                <div className="max-w-screen-xl mx-auto px-6 py-2 flex justify-between items-center space-x-20">
+                <div className="max-w-screen-xl mx-auto px-6 flex justify-between items-center space-x-20">
                     <ul className="flex justify-center space-x-1">
                         <li><Link to="/"><img src="/images/logo.svg" alt="EduPress Logo" /></Link></li>
                         <li><Link to="/" className="text-2xl text-center font-bold">EduPress</Link></li>
                     </ul>
-                    <ul className="flex justify-center space-x-4">
-                        <li><Link to="/" className="hover:text-orange-500">Home</Link></li>
-                        <li><Link to="/courses" className="hover:text-orange-500">Courses</Link></li>
-                        <li><Link to="/blog" className="hover:text-orange-500">Blog</Link></li>
-                        <li className="hover:text-orange-500"><Link className="text-center" to="/contact">Page <i class="text-[10px] fa-solid fa-chevron-down"></i></Link></li>
-                        <li className="hover:text-orange-500">LearnPress Add-On</li>
-                        <li className="hover:text-orange-500">Premium Theme</li>
+                    <ul className="flex justify-center h-[56px] items-center">
+                        {[
+                            { to: "/", text: "Home", activeOn: ["/"] },
+                            { to: "/courses", text: "Courses", activeOn: ["/courses"] },
+                            { to: "/blog", text: "Blog", activeOn: ["/blog"] },
+                            { to: "/contact", text: <>Page <i className="text-[10px] fa-solid fa-chevron-down"></i></>, activeOn: ["/contact"] },
+                            { to: "/#learnpress", text: "LearnPress Add-On", hash: true, noActive: true },
+                            { to: "/#theme", text: "Premium Theme", hash: true, noActive: true }
+                        ].map((item, idx) => {
+                            const isActive = !item.noActive && item.activeOn?.includes(location.pathname);
+
+                            return (
+                                <li key={idx}>
+                                    {item.to ? (
+                                        item.hash ? (
+                                            <div
+                                                className={`hover:bg-gray-200 h-[56px] px-4 w-full flex items-center ${isActive ? "bg-gray-200" : ""
+                                                    }`}
+                                            >
+                                                <HashLink smooth to={item.to} className="hover:text-orange-500">
+                                                    {item.text}
+                                                </HashLink>
+                                            </div>
+                                        ) : (
+                                            <div
+                                                className={`hover:bg-gray-200 h-[56px] px-4 w-full flex items-center ${isActive ? "bg-gray-200 text-orange-500" : ""
+                                                    }`}
+                                            >
+                                                <Link to={item.to} className="hover:text-orange-500">
+                                                    {item.text}
+                                                </Link>
+                                            </div>
+                                        )
+                                    ) : (
+                                        <span className="hover:text-orange-500 cursor-pointer">
+                                            {item.text}
+                                        </span>
+                                    )}
+                                </li>
+                            );
+                        })}
                     </ul>
                     <ul className="flex justify-center space-x-3">
                         <ul className="flex justify-center space-x-1 items-center">

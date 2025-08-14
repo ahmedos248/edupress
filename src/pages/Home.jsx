@@ -1,4 +1,4 @@
-import Articles from "../components/Articles/Articles";
+import ArticlesSec from "../components/Articles/ArticlesSec";
 import Categories from "../components/Categories";
 import FeaturedCourses from "../components/FeaturedCourses";
 import Hero from "../components/Hero";
@@ -13,7 +13,7 @@ export default function Home() {
             <FeaturedCourses />
             <LearnPress />
             <StudentFeedbacks />
-            <Articles />
+            <ArticlesSec />
         </div>
     );
 }

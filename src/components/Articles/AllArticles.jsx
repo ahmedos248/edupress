@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import ArticleCard1 from './ArticleCard1';
 import ArticleCard2 from './ArticleCard2';
-import Sidebar from '../Sidebar';
+
 import Articles from '../../data/articles.json';
+import Sidebar from '../Sidebar';
 
 const AllArticles = () => {
     const [open, setOpen] = useState(false);
