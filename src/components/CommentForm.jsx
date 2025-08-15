@@ -1,10 +1,10 @@
 import React from "react";
 
-const CommentForm = ({ className = '' }) => {
+const CommentForm = ({ className = '', title = 'Leave A Comment', titleClassName = 'text-lg' }) => {
     return (
-        <div className={`mt-8 md:mx-4 ${className}`}>
-            <h3 className="font-semibold text-lg">Leave A Comment</h3>
-            <p className="text-sm text-gray-600 mb-4">
+        <div className={`mt-8 ${className}`}>
+            <h3 className={`font-semibold ${titleClassName}`}>{title}</h3>
+            <p className="text-sm text-gray-600 my-5">
                 Your email address will not be published. Required fields are marked *
             </p>
 
@@ -36,7 +36,7 @@ const CommentForm = ({ className = '' }) => {
                     type="submit"
                     className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full"
                 >
-                    Posts Comment
+                    Post Comment
                 </button>
             </form>
         </div>

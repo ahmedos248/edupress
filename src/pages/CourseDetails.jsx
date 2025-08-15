@@ -92,7 +92,7 @@ export default function CourseDetails() {
             <div className="w-full py-12">
                 <div className="max-w-screen-xl mx-auto">
                     <Tabs />
-                    <CommentForm className="lg:p-0 p-6 max-w-[850px]" />
+                    <CommentForm className="lg:p-4 p-6 max-w-[850px]" />
                 </div>
             </div>
         </>
