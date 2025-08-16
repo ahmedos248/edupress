@@ -3,6 +3,7 @@ import Breadcrumb from '../components/Breadcrumb'
 import { useLocation } from "react-router-dom";
 import Sidebar from '../components/Sidebar';
 import CommentForm from '../components/CommentForm';
+import ErrorPage from "./ErrorPage"
 
 
 const BlogSingle = () => {
@@ -31,7 +32,9 @@ const BlogSingle = () => {
     ];
 
 
-    if (!article) return <p>Article not found</p>;
+    if (!article) {
+        return <ErrorPage />;
+    }
     return (
         <>
             <Breadcrumb />

@@ -2,12 +2,13 @@ import { useLocation } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumb";
 import Tabs from "../components/Tabs";
 import CommentForm from "../components/CommentForm";
+import ErrorPage from "./ErrorPage";
 
 export default function CourseDetails() {
     const { state } = useLocation();
     const course = state?.course;
 
-    if (!course) return <p>Course not found</p>;
+    if (!course) { return <ErrorPage />; }
 
     return (
         <>
