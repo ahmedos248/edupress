@@ -44,21 +44,8 @@ export default function CourseCard2({ course }) {
                 </div>
                 <div className="flex relative justify-between items-center px-4 py-3 border-t md:text-sm text-xs text-gray-700">
                     <span className="font-semibold text-gray-700 space-x-2">
-                        {course.disc && (
-                            <>
-                                <s className="text-gray-400">{course.price}</s>
-                                <span className="text-green-500">{course.disc}</span>
-                            </>
-                        )}
-                        {course.disc1 && (
-                            <>
-                                <s className="text-gray-400">{course.price}</s>
-                                <span className="text-red-500">{course.disc1}</span>
-                            </>
-                        )}
-                        {!course.disc && !course.disc1 && (
-                            <span className="text-orange-500">{course.price}</span>
-                        )}
+                        <s className="text-gray-400">{course.price}</s>
+                        <span className={`${course.disc === "Free" ? "text-green-500" : "text-red-500"}`}>{course.disc}</span>
                     </span>
                     <button className="hover:underline font-medium">View More</button>
                 </div>

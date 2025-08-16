@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
     return (
@@ -14,9 +15,9 @@ const Hero = () => {
                         We denounce with righteous indignation and dislike men who are so beguiled and demoralized that cannot trouble.
                     </p>
                     <div className="space-x-4">
-                        <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition">
+                        <Link to="/blog" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition">
                             Posts comment
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
