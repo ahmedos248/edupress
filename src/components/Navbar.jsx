@@ -81,8 +81,6 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
                 </div>
             </nav>
             <div className={`w-full fixed top-[56px] lg:hidden z-40 transition-transform duration-300 ease-in-out ${open ? "translate-y-0" : "-translate-y-full"} backdrop-blur-md bg-white/50 px-6 py-4 flex flex-col md:flex-row justify-between items-start md:items-center md:space-x-20 space-y-6 md:space-y-0 border-2 border-orange-500`}>
-
-                {/* Navigation Links */}
                 <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 w-full md:w-auto border-2 border-orange-500 p-4 rounded-md">
                     {[
                         { to: "/", text: "Home", activeOn: ["/"] },
@@ -110,8 +108,6 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
                         )
                     })}
                 </ul>
-
-                {/* Login / Register Buttons */}
                 <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 mt-2 w-full md:w-auto">
                     <Link to="/login" className="flex justify-center items-center font-semibold border-2 border-orange-500 p-3 rounded-md hover:bg-orange-500 hover:text-white transition w-full md:w-auto">
                         {"Login".split("").map((char, index) => <span key={index}>{char}</span>)}
