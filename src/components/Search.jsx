@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Search() {
+export default function Search({ searchQuery, setSearchQuery }) {
     const [open, setOpen] = useState(false);
 
     return (
@@ -15,6 +15,8 @@ export default function Search() {
                 <input
                     type="text"
                     placeholder="Search..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
                     className="absolute top-full mt-2 right-0 w-48 px-3 py-1 border border-gray-300 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
             )}

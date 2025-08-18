@@ -55,7 +55,7 @@ export default function Footer() {
             <div className="w-full h-20 relative ">
                 <button
                     onClick={scrollToTop}
-                    className="rounded-full scale-75 shadow-md overflow-hidden w-fit absolute bottom-0 right-4 "
+                    className="rounded-full scale-75 shadow-md overflow-hidden w-fit fixed bottom-24 right-4 "
                 >
                     <img className="hover:scale-125 transition-all duration-300" src="/images/top.svg" alt="Back to Top" />
                 </button>

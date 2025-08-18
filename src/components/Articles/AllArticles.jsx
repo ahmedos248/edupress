@@ -1,13 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ArticleCard1 from './ArticleCard1';
 import ArticleCard2 from './ArticleCard2';
 
-import Articles from '../../data/articles.json';
+import articles from '../../data/articles.json';
 import Sidebar from '../Sidebar';
 
 const AllArticles = () => {
     const [open, setOpen] = useState(false);
+    const [search, setSearch] = useState("");
+    const [filteredArticles, setFilteredArticles] = useState(articles);
     const [active, setActive] = useState('b');
+    useEffect(() => {
+        const normalizedSearch = search.trim().toLowerCase();
+        if (normalizedSearch === "") {
+            setFilteredArticles(articles);
+        } else {
+            setFilteredArticles(
+                articles.filter(article =>
+                    article.title.toLowerCase().includes(normalizedSearch)
+                )
+            );
+        }
+    }, [search, articles]);
     return (
         <section className="max-w-screen-xl mx-auto px-6 py-12 bg-white exo-text lg:grid lg:grid-cols-4">
             <button
@@ -27,6 +41,8 @@ const AllArticles = () => {
                                 <input
                                     type="text"
                                     placeholder="Search"
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
                                     className="w-full focus:outline-none"
                                 />
                                 <i className="fa-solid fa-magnifying-glass"></i>
@@ -54,16 +70,16 @@ const AllArticles = () => {
                     </div>
                 </div>
                 <div className="grid grid-cols-2 md:gap-8 gap-4">
-                    {Articles.map((article) => (
-                        <>
-                            {active === 'a' && (
-                                <ArticleCard1 key={article.id} article={article} />
-                            )}
-                            {active === 'b' && (
-                                <ArticleCard2 key={article.id} article={article} />
-                            )}
-                        </>
-                    ))}
+                    {filteredArticles.length > 0 ? (
+                        filteredArticles.map((article, idx) => (
+                            <React.Fragment key={idx}>
+                                {active === "a" && <ArticleCard1 article={article} />}
+                                {active === "b" && <ArticleCard2 article={article} />}
+                            </React.Fragment>
+                        ))
+                    ) : (
+                        <p>No article found</p>
+                    )}
                 </div>
                 <div className="flex justify-center mt-6 gap-2">
                     <button className="w-8 h-8 flex items-center justify-center border rounded-full p-6">

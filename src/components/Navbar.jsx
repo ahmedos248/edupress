@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import Search from "./Search";
 
-export default function Navbar() {
+export default function Navbar({ searchQuery, setSearchQuery }) {
     const [open, setOpen] = useState(false);
     const location = useLocation();
     return (
@@ -62,7 +62,7 @@ export default function Navbar() {
                             <li>/</li>
                             <li><Link to="/register" className="hover:text-orange-500">Register</Link></li>
                         </ul>
-                        <Search />
+                        <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
                     </ul>
                 </div>
             </nav>
@@ -73,15 +73,17 @@ export default function Navbar() {
                         <li><Link to="/" className="md:text-2xl text-xl text-center font-bold">EduPress</Link></li>
                     </ul>
                     <ul className="flex justify-center items-center space-x-4">
-                        <Search />
+                        <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
                         <i
                             onClick={() => setOpen(prev => !prev)}
                             className="fa-solid fa-bars lg:hidden z-50 text-orange-500 bg-white p-2 rounded shadow" />
                     </ul>
                 </div>
             </nav>
-            <div className={`w-full fixed backdrop-blur-md lg:hidden top-[56px] bg-white/50 mx-auto px-6 py-2 flex justify-between items-center md:space-x-20 space-x-10 md:text-lg text-sm border-2 border-orange-500 p-4 transition-all duration-300 ease-in-out z-40 ${open ? "" : "-translate-y-96"}`}>
-                <ul className="flex flex-col justify-center space-y-4 border-2 border-orange-500 p-4 rounded-md">
+            <div className={`w-full fixed top-[56px] lg:hidden z-40 transition-transform duration-300 ease-in-out ${open ? "translate-y-0" : "-translate-y-full"} backdrop-blur-md bg-white/50 px-6 py-4 flex flex-col md:flex-row justify-between items-start md:items-center md:space-x-20 space-y-6 md:space-y-0 border-2 border-orange-500`}>
+
+                {/* Navigation Links */}
+                <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 w-full md:w-auto border-2 border-orange-500 p-4 rounded-md">
                     {[
                         { to: "/", text: "Home", activeOn: ["/"] },
                         { to: "/courses", text: "Courses", activeOn: ["/courses"] },
@@ -95,36 +97,32 @@ export default function Navbar() {
                             <li key={idx}>
                                 {item.to ? (
                                     item.hash ? (
-                                        <HashLink smooth to={item.to} className="hover:text-orange-500">
-                                            {item.text}
-                                        </HashLink>
+                                        <HashLink smooth to={item.to} className="hover:text-orange-500 block">{item.text}</HashLink>
                                     ) : (
-                                        <Link to={item.to} className={`hover:text-orange-500 ${isActive ? "text-orange-500" : ""}`}>
+                                        <Link to={item.to} className={`hover:text-orange-500 block ${isActive ? "text-orange-500" : ""}`}>
                                             {item.text}
                                         </Link>
-                                    )) : (
-                                    <span className="hover:text-orange-500 cursor-pointer">
-                                        {item.text}
-                                    </span>
+                                    )
+                                ) : (
+                                    <span className="hover:text-orange-500 cursor-pointer block">{item.text}</span>
                                 )}
                             </li>
                         )
                     })}
                 </ul>
-                <div className="flex justify-center items-center space-x-10 mt-2">
-                    <Link to="/login" className="hover:text-orange-500 flex flex-col space-y-5 items-center md:text-lg text-base font-semibold border-2 border-orange-500 p-4 rounded-md">
-                        {"Login".split("").map((char, index) => (
-                            <span key={index}>{char}</span>
-                        ))}
+
+                {/* Login / Register Buttons */}
+                <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 mt-2 w-full md:w-auto">
+                    <Link to="/login" className="flex justify-center items-center font-semibold border-2 border-orange-500 p-3 rounded-md hover:bg-orange-500 hover:text-white transition w-full md:w-auto">
+                        {"Login".split("").map((char, index) => <span key={index}>{char}</span>)}
                     </Link>
-                    <Link to="/register" className="hover:text-orange-500 flex flex-col items-center md:text-lg text-base font-semibold border-2 border-orange-500 p-4 rounded-md">
-                        {"Register".split("").map((char, index) => (
-                            <span key={index}>{char}</span>
-                        ))}
+                    <Link to="/register" className="flex justify-center items-center font-semibold border-2 border-orange-500 p-3 rounded-md hover:bg-orange-500 hover:text-white transition w-full md:w-auto">
+                        {"Register".split("").map((char, index) => <span key={index}>{char}</span>)}
                     </Link>
                 </div>
 
             </div>
+
             <div
                 className={`
     fixed inset-0 z-30 backdrop-blur-[1px] bg-black bg-opacity-40 lg:hidden 
